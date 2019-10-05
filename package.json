@@ -19,11 +19,17 @@
     "@react-native-community/eslint-config": "0.0.3",
     "babel-jest": "24.9.0",
     "eslint": "6.5.1",
+    "ghooks": "^2.0.4",
     "jest": "24.9.0",
     "metro-react-native-babel-preset": "0.51.1",
     "react-test-renderer": "16.9.0"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "./pre-commit.sh"
+    }
   }
 }
