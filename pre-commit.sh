@@ -19,10 +19,12 @@ check_eslint () {
   fi
 
   for file in ${files}; do
+    if [[ -f $file ]] ; then
       git show :$file | ./node_modules/.bin/eslint $file
       if [[ $? != 0 ]] ; then
           eslint_result=1
       fi
+    fi
   done;
 
   return $eslint_result
