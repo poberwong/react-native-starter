@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { enterEntrance } from '../../helpers/config';
-import { createStackNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import FirstSettingScreen from './FirstSettingScreen';
 
 const SCREENS = {
@@ -27,13 +28,15 @@ export default class extends PureComponent {
   }
 
   render() {
-    const Navigator = createStackNavigator(this.getScreens(), {
-      initialRouteName: enterEntrance,
-      headerMode: 'none',
-      navigationOptions: {
-        gesturesEnabled: true,
-      },
-    });
+    const Navigator = createAppContainer(
+      StackNavigator(this.getScreens(), {
+        initialRouteName: enterEntrance,
+        headerMode: 'none',
+        navigationOptions: {
+          gesturesEnabled: true,
+        },
+      }),
+    );
     return <Navigator />;
   }
 }
