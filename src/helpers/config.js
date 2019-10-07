@@ -1,4 +1,5 @@
 // import { NativeModules } from 'react-native';
+import codePush from 'react-native-code-push';
 
 // const {
 //   Config: { APP_MODE, BASE_BACKEND },
@@ -11,6 +12,10 @@ const config = {
   backend: '',
 };
 export default config;
+
+export const codePushSetting = {
+  checkFrequency: codePush.CheckFrequency.ON_APP_START,
+};
 
 export function setBackend(backend) {
   config.backend = backend;
