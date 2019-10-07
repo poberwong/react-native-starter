@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { enterEntrance } from '../../helpers/config';
+import { settingEntrance } from '../../helpers/config';
 import { createAppContainer } from 'react-navigation';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import FirstSettingScreen from './FirstSettingScreen';
 
 const SCREENS = {
@@ -21,7 +21,7 @@ export default class extends PureComponent {
     const screens = {};
     Object.keys(SCREENS).forEach(key => {
       screens[key] = {
-        screen: this.addProps(SCREENS[key]),
+        screen: FirstSettingScreen,
       };
     });
     return screens;
@@ -29,8 +29,8 @@ export default class extends PureComponent {
 
   render() {
     const Navigator = createAppContainer(
-      StackNavigator(this.getScreens(), {
-        initialRouteName: enterEntrance,
+      createStackNavigator(this.getScreens(), {
+        initialRouteName: settingEntrance,
         headerMode: 'none',
         navigationOptions: {
           gesturesEnabled: true,

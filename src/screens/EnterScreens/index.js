@@ -40,7 +40,7 @@ export default class extends PureComponent {
     const screens = {};
     Object.keys(SCREENS).forEach(key => {
       screens[key] = {
-        screen: this.addProps(SCREENS[key]),
+        screen: LoginScreen,
       };
     });
     return screens;

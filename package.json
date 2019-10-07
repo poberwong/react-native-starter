@@ -11,6 +11,7 @@
     "reinstall": "rm -rf node_modules && npm install"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.2",
     "@react-native-community/netinfo": "^4.3.3",
     "mobx": "^5.14.0",
     "mobx-persist": "^0.4.1",

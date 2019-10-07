@@ -10,7 +10,7 @@ import config, {
 } from '../helpers/config';
 import MainStore from './main';
 import { create, persist } from 'mobx-persist';
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import BackgroundTimer from 'react-native-background-timer';
 import Global from './global';
 import SplashScreen from 'react-native-splash-screen';
@@ -44,53 +44,39 @@ export default class Auth {
   // Auth info
   @observable isLoggedIn = isLogin;
   @persist @observable token = '';
-  @persist @observable refreshToken = '';
 
   // other
   @persist @observable env = APP_MODE;
   @persist @observable backend = BASE_BACKEND;
   @persist @observable appVersion;
 
-  @action setToken = (token, refreshToken) => {
+  @action setToken = token => {
     this.token = token;
-    this.refreshToken = refreshToken;
     setToken(token);
   };
 
+  @action setInitState = state => {
+    this.initState = state;
+  };
+
   @action login = ({ username, password }) => {
-    return request
-      .post(config.backend + '/auth', { username, password })
-      .then(res => {
-        this.username = username;
-        this.setToken(res.token, res.refreshToken);
-        return Promise.resolve(res);
-      });
+    return Promise.resolve().then(res => {
+      this.username = username;
+      this.password = password;
+      this.setToken('I am a token');
+      return Promise.resolve();
+    });
   };
 
   @action loginSuccess = () => {
-    this.loadUserInfo().then(() => {
-      this.isLoggedIn = true;
-      // you can do something such as resuming some services, sending deviceInfo to server or starting some listeners here
-    });
+    this.isLoggedIn = true;
+    // you can do something such as resuming some services, sending deviceInfo to server or starting some listeners here
     // start refresh token task
     this._stopTokenTask = this._runTokenTask();
   };
 
-  @action loadUserInfo = () => {
-    return request.get(config.backend + '/users').then(
-      res => {
-        this.setUserInfo(res);
-        return Promise.resolve(res);
-      },
-      err => {
-        return Promise.reject(err);
-      },
-    );
-  };
-
-  @action setUserInfo = info => {
-    this.userInfo = info;
-    this.initState = info.initState;
+  @action completeSettings = () => {
+    this.setInitState(INIT_STATE.complete);
   };
 
   @action logout = () => {
@@ -107,8 +93,8 @@ export default class Auth {
     // 设置backend
     setBackend(toJS(this.backend));
     // load 完成
-    if (this.token && this.refreshToken) {
-      setToken(toJS(this.token), toJS(this.refreshToken));
+    if (this.token) {
+      setToken(toJS(this.token));
       this.isLoggedIn = true; // token存在，认为已经登录了
       this.loginSuccess();
     } else {
@@ -124,7 +110,6 @@ export default class Auth {
     this.isLoggedIn = false;
     this.initState = INIT_STATE.hospital;
     this.setToken('', '');
-    this.setUserInfo({});
 
     MainStore.getInstance().reset();
   };

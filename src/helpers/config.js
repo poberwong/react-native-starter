@@ -18,8 +18,6 @@ export function setBackend(backend) {
 
 const isDev = __DEV__;
 
-console.log = isDev ? console.log : () => null;
-
 export const enterEntrance = isDev ? 'LoginScreen' : 'LoginScreen';
 
 export const settingEntrance = isDev
