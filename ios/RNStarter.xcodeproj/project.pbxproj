@@ -161,7 +161,6 @@
 				80B66169514859F65CF2CCE9 /* Pods-RNStarterTests.debug.xcconfig */,
 				D16BAE31D7DF5DDDDDAFC2F0 /* Pods-RNStarterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +307,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
