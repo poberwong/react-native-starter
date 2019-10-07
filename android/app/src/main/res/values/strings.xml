@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RNStarter</string>
+    <string name="splash_desc">you can put custom image or view instead</string>
 </resources>
