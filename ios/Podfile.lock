@@ -239,6 +239,8 @@ PODS:
     - React
   - RNGestureHandler (1.4.1):
     - React
+  - RNLocalize (1.3.0):
+    - React
   - SSZipArchive (2.2.2)
   - Yoga (1.14.0)
 
@@ -278,6 +280,7 @@ DEPENDENCIES:
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNLocalize (from `../node_modules/react-native-localize`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -352,6 +355,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-device-info"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNLocalize:
+    :path: "../node_modules/react-native-localize"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -391,6 +396,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 5ae4d57458804e99f73d427214442a6b10a53856
   RNDeviceInfo: 9e88577c51bd42f65275e53bb0de0a0f728ed6b8
   RNGestureHandler: 4cb47a93019c1a201df2644413a0a1569a51c8aa
+  RNLocalize: 6e4a6b8582dfbb50b452464d208c30a7a20516f4
   SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
   Yoga: 14927e37bd25376d216b150ab2a561773d57911f
 

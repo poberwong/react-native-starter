@@ -1,28 +1,35 @@
 import { action, observable } from 'mobx';
-import { create } from 'mobx-persist';
-import { AsyncStorage } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
+import i18n from '../helpers/i18n';
 // import Permission from '../helpers/permission';
 
 /**
  * 主要用来控制全局的一些辅助工具
  */
 export default class Global {
-  timer = null;
-
   // 是否联网
   @observable isConnected = true;
-  // i18n here
 
   constructor() {
     NetInfo.isConnected.addEventListener(
       'connectionChange',
       this.connectivityChange,
     );
+    i18n.setI18nConfig();
+    console.log('I18n', i18n.t('hello'));
+
+    i18n.addEventListener('change', this.handleLocalizationChange);
   }
 
   @action connectivityChange = isConnected => {
     this.isConnected = isConnected;
+  };
+
+  /**
+   * If you wanna update UI, please use mobx or force update to refresh page where you change locale manually.
+   */
+  handleLocalizationChange = () => {
+    i18n.setI18nConfig();
   };
 
   requestPermissionOnstart = () => {
@@ -41,13 +48,3 @@ export default class Global {
     return this.instance;
   }
 }
-
-// const hydrate = create({
-//   storage: AsyncStorage,
-// });
-
-// hydrate('global', Global.getInstance())
-//   .then(() => {
-//     console.log('global store hydrate complete');
-//   })
-//   .catch(err => console.log('mobx-persist global store error : ', err.message));

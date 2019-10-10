@@ -9,7 +9,6 @@ const codePushSetting = {
 
 // configurations from native
 export { APP_MODE, BASE_BACKEND };
-console.log('app: ', APP_MODE, BASE_BACKEND);
 
 // configurations from JS memory, could be changed one day.
 const config = {
