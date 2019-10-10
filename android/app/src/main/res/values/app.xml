@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="reactNativeCodePush_androidDeploymentKey">your code push key</string>
+    <!--<string name="app_name">中信湘雅开发版</string>-->
+    <string name="app_mode">dev</string>
+    <string name="base_backend">https://dpcp-patient.pgxcloud.com/v1</string>
 </resources>

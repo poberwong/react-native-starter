@@ -1,39 +1,43 @@
-// import { NativeModules } from 'react-native';
+import { NativeModules } from 'react-native';
 import codePush from 'react-native-code-push';
-
-// const {
-//   Config: { APP_MODE, BASE_BACKEND },
-// } = NativeModules;
-
-// export { APP_MODE, BASE_BACKEND };
-
-const config = {
-  // backend: BASE_BACKEND,
-  backend: '',
-};
-export default config;
-
-export const codePushSetting = {
+const {
+  Config: { APP_MODE, BASE_BACKEND },
+} = NativeModules;
+const codePushSetting = {
   checkFrequency: codePush.CheckFrequency.ON_APP_START,
+};
+
+// configurations from native
+export { APP_MODE, BASE_BACKEND };
+console.log('app: ', APP_MODE, BASE_BACKEND);
+
+// configurations from JS memory, could be changed one day.
+const config = {
+  appMode: APP_MODE,
+  backend: BASE_BACKEND,
+  codePushSetting,
 };
 
 export function setBackend(backend) {
   config.backend = backend;
 }
 
+export default config;
+
+// some constants based on isDev
 const isDev = __DEV__;
 
-export const enterEntrance = isDev ? 'LoginScreen' : 'LoginScreen';
+export const ENTER_ENTRANCE = isDev ? 'LoginScreen' : 'LoginScreen';
 
-export const settingEntrance = isDev
+export const SETTING_ENTRANCE = isDev
   ? 'FirstSettingScreen'
   : 'FirstSettingScreen';
 
-export const mainEntrance = isDev ? 'HomeScreen' : 'HomeScreen';
+export const MAIN_ENTRANCE = isDev ? 'HomeScreen' : 'HomeScreen';
 
-export const isLogin = isDev;
+export const IS_LOGIN = isDev;
 
-export const isFirstLogin = !isDev;
+export const IS_FIRST_LOGIN = !isDev;
 
-export const account = isDev ? '17600108288' : '';
-export const password = isDev ? '123456' : '';
+export const ACCOUNT = isDev ? '17600108288' : '';
+export const PASSWORD = isDev ? '123456' : '';

@@ -12,6 +12,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		185A2FD8234F9E3D0065DA83 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185A2FD7234F9E3D0065DA83 /* Images.xcassets */; };
+		186B3EC1234FACDA00DD5F82 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 186B3EC0234FACDA00DD5F82 /* Config.m */; };
 		23D5EAF46313D541D36F16FA /* libPods-RNStarterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BF2E919A949F8095EB0D86 /* libPods-RNStarterTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -48,6 +49,9 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RNStarter/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RNStarter/main.m; sourceTree = "<group>"; };
 		185A2FD7234F9E3D0065DA83 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
+		186B3EBE234FACDA00DD5F82 /* AppDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDef.h; sourceTree = "<group>"; };
+		186B3EBF234FACDA00DD5F82 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		186B3EC0234FACDA00DD5F82 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		1C30519B6E3D993DB273F36B /* Pods-RNStarter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNStarter.release.xcconfig"; path = "Target Support Files/Pods-RNStarter/Pods-RNStarter.release.xcconfig"; sourceTree = "<group>"; };
 		20C733DACB9A0F9716C2C1FB /* libPods-RNStarter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNStarter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23745E526C45155FE4780DFE /* Pods-RNStarter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNStarter.debug.xcconfig"; path = "Target Support Files/Pods-RNStarter/Pods-RNStarter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		13B07FAE1A68108700A75B9A /* RNStarter */ = {
 			isa = PBXGroup;
 			children = (
+				186B3EBD234FACDA00DD5F82 /* Config */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				185A2FD7234F9E3D0065DA83 /* Images.xcassets */,
@@ -130,6 +135,17 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = RNStarter;
+			sourceTree = "<group>";
+		};
+		186B3EBD234FACDA00DD5F82 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				186B3EBE234FACDA00DD5F82 /* AppDef.h */,
+				186B3EBF234FACDA00DD5F82 /* Config.h */,
+				186B3EC0234FACDA00DD5F82 /* Config.m */,
+			);
+			name = Config;
+			path = RNStarter/Config;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -523,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				186B3EC1234FACDA00DD5F82 /* Config.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

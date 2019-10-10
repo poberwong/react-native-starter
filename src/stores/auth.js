@@ -1,11 +1,9 @@
 import { action, observable, toJS } from 'mobx';
 import request, { set401Handler, setToken } from '../helpers/request';
 import config, {
-  account,
-  APP_MODE,
-  BASE_BACKEND,
-  isLogin,
-  password,
+  IS_LOGIN,
+  ACCOUNT,
+  PASSWORD,
   setBackend,
 } from '../helpers/config';
 import MainStore from './main';
@@ -36,18 +34,18 @@ export default class Auth {
   @observable isAppLoading = true;
   // user info
   @persist('object') @observable userInfo = {};
-  @persist @observable username = account;
-  @observable password = password;
+  @persist @observable username = ACCOUNT;
+  @observable password = PASSWORD;
 
   @persist @observable initState = INIT_STATE.start;
 
   // Auth info
-  @observable isLoggedIn = isLogin;
+  @observable isLoggedIn = IS_LOGIN;
   @persist @observable token = '';
 
   // other
-  @persist @observable env = APP_MODE;
-  @persist @observable backend = BASE_BACKEND;
+  @persist @observable env = config.appMode;
+  @persist @observable backend = config.backend;
   @persist @observable appVersion;
 
   @action setToken = token => {
@@ -101,9 +99,7 @@ export default class Auth {
       this.logout();
     }
     this.isAppLoading = false;
-    // setTimeout(() => {
-    //   SplashScreen.hide();
-    // }, 1500);
+    SplashScreen.hide();
 
     Global.getInstance().requestPermissionOnstart(); // 启动时请求一些必要的权限
   };
