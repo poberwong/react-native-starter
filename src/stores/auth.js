@@ -101,7 +101,9 @@ export default class Auth {
       this.logout();
     }
     this.isAppLoading = false;
-    SplashScreen.hide();
+    // setTimeout(() => {
+    //   SplashScreen.hide();
+    // }, 1500);
 
     Global.getInstance().requestPermissionOnstart(); // 启动时请求一些必要的权限
   };
