@@ -30,7 +30,7 @@ export default class extends Component {
 
   _handleAppStateChange = appState => {
     if (appState === 'active') {
-      SplashScreen.hide();
+      // SplashScreen.hide();
     } else if (appState === 'background') {
       // do whatever you wanna do when app is background
     }
