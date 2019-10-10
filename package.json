@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest --passWithNoTests",
     "lint": "eslint .",
-    "reinstall": "rm -rf node_modules && npm install"
+    "reinstall": "rm -rf node_modules && npm install",
+    "storybook": "start-storybook -p 7007"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.2",
@@ -38,7 +39,13 @@
     "@babel/plugin-transform-flow-strip-types": "^7.4.4",
     "@babel/runtime": "7.6.2",
     "@react-native-community/eslint-config": "0.0.5",
+    "@storybook/addon-actions": "^5.2.3",
+    "@storybook/addon-links": "^5.2.3",
+    "@storybook/addons": "^5.2.3",
+    "@storybook/react-native": "^5.2.3",
+    "@storybook/react-native-server": "^5.2.3",
     "babel-jest": "24.9.0",
+    "babel-loader": "^8.0.6",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "6.5.1",
     "eslint-plugin-react-hooks": "^2.1.2",
@@ -46,6 +53,7 @@
     "jest": "24.9.0",
     "metro-react-native-babel-preset": "0.51.1",
     "prop-types": "^15.7.2",
+    "react-dom": "^16.9.0",
     "react-test-renderer": "16.9.0"
   },
   "jest": {

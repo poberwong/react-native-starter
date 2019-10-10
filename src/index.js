@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { AppState, StatusBar, View } from 'react-native';
-import SplashScreen from 'react-native-splash-screen';
 import codePush from 'react-native-code-push';
 import './helpers/global';
 import MainScreens from './screens/MainScreens';
