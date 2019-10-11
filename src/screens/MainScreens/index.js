@@ -1,10 +1,15 @@
 import React, { PureComponent } from 'react';
 import { Provider } from 'mobx-react';
-import { mainEntrance } from '../../helpers/config';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import createRoutes from './createRoutes';
+import { MAIN_ENTRANCE } from '../../helpers/config';
+import { createRoutes } from '../../helpers/utils';
 import MainStore from '../../stores/main';
+import HomeScreen from './HomeScreen';
+
+const SCREENS = {
+  HomeScreen,
+};
 
 export default class extends PureComponent {
   constructor(props) {
@@ -14,8 +19,8 @@ export default class extends PureComponent {
 
   render() {
     const Navigator = createAppContainer(
-      createStackNavigator(createRoutes(), {
-        initialRouteName: mainEntrance,
+      createStackNavigator(createRoutes(SCREENS), {
+        initialRouteName: MAIN_ENTRANCE,
         headerMode: 'none',
         navigationOptions: {
           gesturesEnabled: true,
