@@ -16,8 +16,6 @@ export default class Global {
       this.connectivityChange,
     );
     i18n.setI18nConfig();
-    console.log('I18n', i18n.t('hello'));
-
     i18n.addEventListener('change', this.handleLocalizationChange);
   }
 
