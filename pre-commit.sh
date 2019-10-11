@@ -4,8 +4,8 @@ unit_test_result=0
 eslint_result=0
 
 check_unit_test () {
-  # npm test
-  return 0
+  npm test
+  return $?
 }
 
 check_eslint () {
