@@ -147,11 +147,11 @@ function uploadFile(url, file, data = {}) {
         return Promise.resolve();
       }
     })
-    .then(data => {
+    .then(res => {
       if (isError) {
-        return Promise.reject(new Error(data.message));
+        return Promise.reject(new Error(res.message));
       }
-      return Promise.resolve(data);
+      return Promise.resolve(res);
     });
 }
 

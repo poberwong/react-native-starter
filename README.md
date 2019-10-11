@@ -5,7 +5,6 @@ This is a boilerplate to make it more easy to start
 0.61.2
 
 ## TODO
-
 - [x] request.js based on superagent
 - [x] authorization logic based on react-navigation
 - [x] maintain status of authorization

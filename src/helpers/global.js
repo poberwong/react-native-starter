@@ -1,3 +1,6 @@
+/**
+ * extension for global
+ */
 import {
   Dimensions,
   PixelRatio,

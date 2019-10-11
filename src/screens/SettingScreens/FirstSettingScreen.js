@@ -5,7 +5,7 @@ import { inject, observer } from 'mobx-react';
 
 export class FirstSettingScreen extends BaseScreen {
   static defaultProps = {
-    title: '首页',
+    title: 'FirstSetting',
   };
 
   completeSettings = () => {

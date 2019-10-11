@@ -1,11 +1,10 @@
+/**
+ * logic related to global configuration or status
+ */
 import { action, observable } from 'mobx';
 import NetInfo from '@react-native-community/netinfo';
 import i18n from '../helpers/i18n';
-// import Permission from '../helpers/permission';
 
-/**
- * 主要用来控制全局的一些辅助工具
- */
 export default class Global {
   // 是否联网
   @observable isConnected = true;

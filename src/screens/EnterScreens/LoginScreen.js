@@ -5,7 +5,7 @@ import BaseScreen from '../../components/BaseScreen';
 
 export class LoginScreen extends BaseScreen {
   static defaultProps = {
-    title: '首页',
+    title: 'LoginScreen',
   };
 
   login = () => {

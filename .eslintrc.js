@@ -11,6 +11,8 @@ module.exports = {
   },
   globals: {
     AppVersion: false,
+    ApplicationName: false,
+    DeviceUniqueID: false,
     SCREEN_WIDTH: false,
     SCREEN_HEIGHT: false,
     iOS: false,

@@ -1,3 +1,7 @@
+/**
+ * Everything related to authorization,
+ * such as data request、userInfo、logic to control authorization
+ */
 import { action, observable, toJS } from 'mobx';
 import request, { set401Handler, setToken } from '../helpers/request';
 import config, {

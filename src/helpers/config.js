@@ -1,3 +1,7 @@
+/**
+ * app_mode and backend url is from native module named Config so that you can
+ * replace some core config files to switch env easily.
+ */
 import { NativeModules } from 'react-native';
 import codePush from 'react-native-code-push';
 const {

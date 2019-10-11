@@ -1,5 +1,6 @@
 /**
  * @format
+ * I use __DEV__ to inject storybook into project, you can remove or use other condition。
  */
 
 import { AppRegistry } from 'react-native';
