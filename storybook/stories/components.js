@@ -1,6 +1,8 @@
 import React from 'react';
+import { Button } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
+import CenterView from './CenterView';
 
-import BaseScreen from '../../src/components/BaseScreen';
-
-storiesOf('Components', module).add('BaseScreen', <BaseScreen />);
+storiesOf('Components', module)
+  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+  .add('Button', () => <Button title="story" />);
