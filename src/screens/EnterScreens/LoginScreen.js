@@ -3,9 +3,7 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 import { observer, inject } from 'mobx-react';
 import BaseScreen from '../../components/BaseScreen';
 
-@inject('auth')
-@observer
-export default class extends BaseScreen {
+export class LoginScreen extends BaseScreen {
   static defaultProps = {
     title: '首页',
   };
@@ -32,6 +30,8 @@ export default class extends BaseScreen {
     );
   }
 }
+
+export default inject('auth')(observer(LoginScreen));
 
 const styles = StyleSheet.create({
   container: {
