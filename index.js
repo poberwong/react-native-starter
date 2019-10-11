@@ -8,4 +8,8 @@ import App from './src';
 import StoryUI from './storybook';
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => (__DEV__ ? StoryUI : App));
+const USE_STORYBOOK = false;
+
+AppRegistry.registerComponent(appName, () =>
+  USE_STORYBOOK && __DEV__ ? StoryUI : App,
+);
