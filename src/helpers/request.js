@@ -46,6 +46,7 @@ request.Request.prototype.setCommonHeader = function() {
   );
 };
 
+// data is same as query() api
 function get(url, data) {
   console.log('get', url);
   return request
