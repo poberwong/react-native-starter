@@ -33,9 +33,9 @@ request.uploadFile(url, fileObject, data)
 
 ```
 ### Manage your routes  
-I put three routes in rootRoutes.
-**screens/EnterScreens**:  you can put some auth screens which could be Login, Register, forgetPassword.
-**screens/SettingScreens**: If you have to do something before entering HomeScreen, you can put some screens here.
+I put three routes in rootRoutes.  
+**screens/EnterScreens**:  you can put some auth screens which could be Login, Register, forgetPassword.  
+**screens/SettingScreens**: If you have to do something before entering HomeScreen, you can put some screens here.  
 **screens/MainScreens**: Just put other screens here.
 
 ### Manage data for different part of project  
@@ -48,7 +48,7 @@ If you think it is necessary to maintain a single store to store data instead of
 I put directories named \_\_test\_\_ at each part of project
 
 ### How to use storybook  
-root/index.js
+rootProject/index.js
 ```javascript
 const USE_STORYBOOK = false;
 ```
@@ -61,4 +61,6 @@ You can put more configs into configuration file which has already contained APP
 
 **iOS path:** `rootProject/ios/RNStarter/Config/AppDef.h`
 
-**Android path:**  `rootProject/android/app/src/main/res/values/app.xml`
+**Android path:**  `rootProject/android/app/src/main/res/values/app.xml`  
+You can put more keys from push, data analysis, map and more third-party service here and just replace it with different files to switch environment to deployment Staging or Production.
+
